@@ -3,6 +3,6 @@ var app = require('../index.js');
  
 describe('GET /', function() {
   it('respond with hello world', function(done) {
-    request(app).get('/').expect('Welcome to Strider', done);
+    request(app).get('/').expect('Strider Demo', done);
   });
 });
