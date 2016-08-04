@@ -3,7 +3,7 @@ var express = require('express');
 var app = express();
  
 app.get('/', function (req, res) {
-  res.send('Hello Strider...');
+  res.send('Hello Strider');
 });
  
 app.listen(process.env.PORT || 5000);
