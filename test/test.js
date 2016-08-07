@@ -12,6 +12,6 @@ describe('GET /user', function(){
     request(app).get('/user')
                 .set('Accept', 'application/json')
                 .expect('Content-Type', 'application/json; charset=utf-8')
-                .expect(200, done);
+                .expect(200, {first_name: 'Alan', last_name: 'Tai'}, done);
   });
 });
