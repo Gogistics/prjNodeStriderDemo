@@ -1,0 +1,43 @@
+#!/bin/bash
+# Program:
+# renew docker contaner
+# History:
+# 08/07/2016
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
+export=PATH
+
+# get parent path if needed
+parent_dir=$(dirname "$(pwd)")
+echo "parent dir: $parent_dir"
+
+# run main container
+app_container='test_strider_node'
+inspect_result=$(docker inspect $app_container )
+if [ "[]" == "$inspect_result" ]; then
+  echo "container does not exist and a new one will be created..."
+  docker run --name ${app_container} -v $(pwd):/app -p 5010:5000 -d strider/nodejs_test
+else
+  echo "container exists; this container is going to be deleted and a new container will be created"
+
+  result=$( docker rm -f $app_container )
+  echo ${result}
+  if [ '${result}'=='${app_container}' ]; then
+    docker run --name ${app_container} -v $(pwd):/app -p 5010:5000 -d strider/nodejs_test
+  fi
+fi
+
+# run backup container
+app_container='test_strider_node_backup_1'
+inspect_result=$(docker inspect $app_container )
+if [ "[]" == "$inspect_result" ]; then
+  echo "container does not exist and a new one will be created..."
+  docker run --name ${app_container} -v $(pwd):/app -p 5011:5000 -d strider/nodejs_test
+else
+  echo "container exists; this container is going to be deleted and a new container will be created"
+
+  result=$( docker rm -f $app_container )
+  echo ${result}
+  if [ '${result}'=='${app_container}' ]; then
+    docker run --name ${app_container} -v $(pwd):/app -p 5011:5000 -d strider/nodejs_test
+  fi
+fi
