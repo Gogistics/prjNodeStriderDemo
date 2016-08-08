@@ -25,6 +25,15 @@ app@my_host:~$ mkdir .ssh
 app@my_host:~$ nano .ssh/authorized_keys
 ```
 
+4. Create a folder called **script**
+
+Continue...
+
+5. Create a folder called **test**
+
+Continue...
+
+
 ###### Ref.
 
 [Strider SSH Deploy](https://futurestud.io/blog/strider-continuous-deployment-to-any-server-via-ssh)
