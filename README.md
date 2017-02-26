@@ -9,7 +9,7 @@ root@my_host$ adduser app
 root@my_host$ usermod -G sudo,docker app
 ```
 
-2. Login as user, **app**, and check if **app* is able to run docker
+2. Login as user, **app**, and check if **app** is able to run docker
 
 ```
 app@my_host@$ docker info
