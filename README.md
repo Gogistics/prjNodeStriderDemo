@@ -1,4 +1,4 @@
-#Simple NodeJS App for Strider CI/CD Demo
+# Simple NodeJS App for Strider CI/CD Demo
 In this tutorial, we're going to learn how to use Strider ssh deployment plugin
 
 1. Ceate user called **app** and then logout
@@ -28,7 +28,7 @@ app@my_host:~$ nano .ssh/authorized_keys
 4. Copy the public key and paste into the authorized_keys file 
 
 
-###### Reference
+###### References
 
 [Strider SSH Deploy](https://futurestud.io/blog/strider-continuous-deployment-to-any-server-via-ssh)
 
